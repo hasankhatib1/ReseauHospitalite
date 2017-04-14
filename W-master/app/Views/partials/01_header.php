@@ -36,7 +36,7 @@
 
     <link rel="stylesheet" href="<?= $this->assetUrl('css/icon.css')?>">
 <!--     <link rel="stylesheet" href="<?= $this->assetUrl('css/style.css')?>"> -->
-    <link rel="stylesheet" href="<?= $this->assetUrl('css/responsive.css')?>">
+    <!-- <link rel="stylesheet" href="<?= $this->assetUrl('css/responsive.css')?>"> -->
 
 <!-- Modification HVA 13/04 -->
     <!-- Fonts -->

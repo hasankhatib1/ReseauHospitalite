@@ -6,7 +6,9 @@
             <div class="box">
                 <div class="col-lg-12 text-center">
         <!-- <form id="contact-form" method="post" action="section-contact.php" role="form"> -->
-        <form id="contact-form" method="post" role="form">
+<!--         HVA : VERIFIER pourquoi est-ce qu'on a cet id contact-form utilisé uniquement dans responsive.css
+        Autrement dit : c'est quoi ce responsive.css ?
+ -->        <form id="contact-form" method="post" role="form">
 
             <div class="messages"></div>
 

@@ -1,0 +1,13 @@
+Ajouter dans main.css
+
+/************************
+section-carte.php
+***************************/
+#map {
+  width: 100%;
+  height: 550px;
+}
+.info-body {
+  text-align: center;
+  overflow: hidden;
+}

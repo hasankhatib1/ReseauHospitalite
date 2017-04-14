@@ -64,5 +64,7 @@ CODEHTML;
 				?>
 			</tbody>
 		</table>
+		<button class="btn btn-default"><a href="<?= $this->url('carte_maj', ["id" => -1])?>">Ajouter un point</a></button>
+		<button class="btn btn-default"><a href="<?= $this->url('default_carte')?>">Retourner sur la carte</a></button>
 	</div>
 </section>

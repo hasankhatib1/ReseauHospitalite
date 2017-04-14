@@ -11,6 +11,9 @@
 
     <title>Réseau Hospitalité</title>
 
+    <script>
+        console.log ("URL = "+window.location.href);
+    </script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?= $this->assetUrl('css/main.css')?>">
@@ -68,7 +71,6 @@
                 <li><a href="<?= $this->url('default_contact')?>">Nous contacter</a></li>
                 <li><input type="text" placeholder="Rechercher"> <a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
             </ul>
-        
         </div>
 
         <!-- code pour modal bootstrap-->

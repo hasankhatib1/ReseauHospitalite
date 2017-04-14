@@ -15,6 +15,7 @@
 		['GET|POST', '/vie_sociale', 'Default#social', 'default_social'],
 		['GET|POST', '/combattre_les_idees_recues', 'Default#ideesrecues', 'default_ideesrecues'],
 		['GET|POST', '/actualites', 'Default#actualites', 'default_actualites'],
+		['GET|POST', '/actualites/[i:page]', 'Default#actualites', 'default_actualites_pagination'], //rachida 14/04
 		['GET|POST', '/agenda', 'Default#agenda', 'default_agenda'],
 		['GET|POST', '/outils_pedagogiques_bonnes_pratiques', 'Default#outils', 'default_outils'],
 		['GET|POST', '/faq', 'Default#faq', 'default_faq'],
@@ -35,6 +36,7 @@
 		//  HVA ajouté le 13/04
 		['GET|POST', '/carte_interactive/carte-liste' , 'Carte#liste', 'carte_interactive_liste'],
 		['GET|POST', '/carte_interactive/carte-maj/[:id]', 'Carte#carteMaj', 'carte_maj'],
+		
 
 			
 	);

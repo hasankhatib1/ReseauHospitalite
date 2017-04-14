@@ -4,7 +4,7 @@
 <nav class="navbar navbar-default " role="navigation">
 <!-- Modification HVA 13/04 -->
     <!-- <div class="container col-md-12 col-md-offset-3 "> -->
-    <div class="container">
+    <div class="container ">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -75,6 +75,7 @@
 
             </ul>
         </div>
-
+    </div>
+    
     </div>
 </nav>

@@ -66,7 +66,7 @@
     <!-- <div class="container"> -->
     <header id="header">
         <div class="entete">
-             <ul>
+            <ul>
                 <li><a href="#" id="identification" data-toggle="modal" data-target="#myModal">S'identifier</a></li>
                 <li><a href="<?= $this->url('default_contact')?>">Nous contacter</a></li>
                 <li><input type="text" placeholder="Rechercher"> <a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>

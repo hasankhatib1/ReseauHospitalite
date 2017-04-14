@@ -42,7 +42,7 @@
                         <small>Bienvenue</small>
                     </h2>
                     <h1 class="brand-name">Notre groupe d'associations</h1>
-                    <hr class="tagline-divider">
+                    
                     <h2>
                         <small>By
                             <strong>WebForce3</strong>
@@ -61,16 +61,16 @@
                             </div>
                             <div id="blog-post" class="owl-carousel">
                                 <?php
-                                    $objEvenements = new \Model\EvenementsModel;
-                                    $lstEvenements = $objEvenements->findAll('dateEven', 'DESC', 5);
-                                    foreach ($lstEvenements as $evenement) : ?>
+                                    $objActualites = new \Model\ActualitesModel;
+                                    $lstActualites = $objActualites->findAll('date', 'DESC', 5);
+                                    foreach ($lstActualites as $actualite) : ?>
                                     <!-- <div> -->
                                     <div class="block">
-                                        <img src="<?= $this->assetUrl('img/').$evenement['photo'] ?>" alt="<?= $evenement['libEven'];?>" class="img-responsive img-blog">
+                                        <img src="<?= $this->assetUrl('img/').$actualite['photo'] ?>" alt="<?= $actualite['libelle'];?>" class="img-responsive img-blog">
                                         <div class="content">
-                                            <h4><?= $evenement['nomEven'];?></h4>
-                                            <small><?= $evenement['dateEven'];?></small>
-                                            <p><?= $evenement['descriptionEven'];?></p>
+                                            <h4><?= $actualite['titre'];?></h4>
+                                            <small><?= $actualite['date'];?></small>
+                                            <p><?= $actualite['description'];?></p>
                                             <a href="actualites.php" class="btn btn-read">Savoir plus</a>
                                         </div>
                                     </div>

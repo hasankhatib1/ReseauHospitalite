@@ -51,8 +51,8 @@ class DefaultController extends Controller
 	public function ideesrecues() {
 		$this->show('pages/ideesrecues');
 	}
-	public function actualites() {
-		$this->show('pages/actualites');
+	public function actualites($page=0) {
+		$this->show('pages/actualites', [ "page" => $page]); // jai change 14/04 rachida
 	}
 	public function agenda() {
 		$this->show('pages/agenda');

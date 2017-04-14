@@ -207,7 +207,7 @@ footer {
     }
 
     .nav{
-      background:#E0F7FA;
+      background:#FFC107 !important;
     }
 
     .navbar {
@@ -225,10 +225,11 @@ footer {
 
     .navbar-default {
         border: none;
-        background:#E0F7FA !important; 
+        background:#FFC107 !important;
         // background: rgba(255,255,255,0.9);
 
     }
+    navbar
 
     .nav>li>a {
         padding: 35px;
@@ -239,9 +240,7 @@ footer {
     .navbar-nav>li>a {
         line-height: normal;
     }
-    .dropdown-menu{
-     color: red !important;
-    }
+    
 
     .navbar-nav {
         display: table;
@@ -249,7 +248,7 @@ footer {
         margin: 0 auto;
         table-layout: fixed;
         font-size: 1.25em;
-        color: #E0F7FA !important;
+        background:#FFC107 !important;
     }
 
 }
@@ -1238,7 +1237,8 @@ Evenement.php
 .imgArticle img{
   max-width: 200px;
   max-height: 200px;
-  margin: 0 auto;
+  //margin: 0 auto;
+  text-align: center;
 }
 
 .description{
@@ -1251,6 +1251,7 @@ entete header
 *************/
 header .entete{
   padding-top: 0px;
+  float: right;
 }
 
 header .entete ul {
@@ -1284,3 +1285,21 @@ section-carte.php HVA
   text-align: center;
   overflow: hidden;
 }
+
+/**********************
+css actualites
+**********************/
+
+ div.actualite {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin: 10px;
+}
+        
+// div.actualite small {
+//     display: block;
+//     margin-bottom: 5px;
+// }

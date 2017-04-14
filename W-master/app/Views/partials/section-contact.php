@@ -1,86 +1,124 @@
+
 <section>
-    
-
-    <div class="container">
+<div class="container">
 
         <div class="row">
             <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <h2 class="intro-text text-center">Contact
-                        <strong>Food and Food </strong>
-                    </h2>
-                    <hr>
-                </div>
-                <div class="col-md-8">
-                    <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2908.2417234948593!2d5.596704015690794!3d43.20441908935169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9a570d3ae320f%3A0x6d3b9e11356e3adf!2sfoot+and+food!5e0!3m2!1sen!2sfr!4v1490014325697" ></iframe>
-                </div>
-                <div class="col-md-4">
-                    <p>Télephone:
-                        <strong>04 42 01 24 24</strong>
-                    </p>
-                    <p>Email:
-                        <strong><a href="mailto:name@example.com">foot-and-food@orange.fr</a></strong>
-                    </p>
-                    <p>Adresse:
-                        <strong>Avenue du Jujubier
-                            <br>La Ciotat 13600</strong>
-                    </p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
+                <div class="col-lg-12 text-center">
+        <!-- <form id="contact-form" method="post" action="section-contact.php" role="form"> -->
+        <form id="contact-form" method="post" role="form">
 
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <h2 class="intro-text text-center">
-                        <strong>Contactez-nous</strong>
-                    </h2>
-                    <hr>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, vitae, distinctio, possimus repudiandae cupiditate ipsum excepturi dicta neque eaque voluptates tempora veniam esse earum sapiente optio deleniti consequuntur eos voluptatem.</p>
-                    <!--<form method="post" role="form" action="chaabani.mjs@gmail.com">
-                        <div class="row">
-                            <div class="form-group col-lg-4">
-                                <label>Nom</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="form-group col-lg-4">
-                                <label>Email </label>
-                                <input type="email" class="form-control">
-                            </div>
-                            <div class="form-group col-lg-4">
-                                <label>Téléphone</label>
-                                <input type="tel" class="form-control">
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="form-group col-lg-12">
-                                <label>Message</label>
-                                <textarea class="form-control" rows="6"></textarea>
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <input type="hidden" name="save" value="contact">
-                                <button type="submit" class="btn btn-default">Envoyer</button>
-                            </div>
+            <div class="messages"></div>
+
+            <div class="controls">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_name">Nom *</label>
+                            <input id="form_name" type="text" name="name" class="form-control obligatoire"  data-error="Firstname is required.">
+                            <span class="error hidden" id="nom-erreur">Veuillez entrer votre nom de famile !</span>
+                            <div class="help-block with-errors"></div>
                         </div>
-                    </form>-->
-                    <form method="post" action="mail.php">
-          <label for="name">Nom:</label>
-          <input type="text" name="Subject" id="name" required placeholder="Nom" />
-          <label for="name">Objet Du Message:</label>
-          <input type="text" name="Sujet" id="subject" required placeholder="Sujet" />
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email" required placeholder="email@exemple.com" />
-          <label for="message">Message:</label>
-          <textarea name="message" id="message" required></textarea>
-          <input type="submit" value="Envoyer Mon Message" />
-        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_lastname">Prénom *</label>
+                            <input id="form_lastname" type="text" name="surname" class="form-control obligatoire"  data-error="Lastname is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_email">Email *</label>
+                            <input id="form_email" type="email" name="email" class="form-control obligatoire" 
+                            . data-error="Valid email is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_phone">Télephone</label>
+                            <input id="form_phone" type="tel" name="phone" class="form-control obligatoire" >
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="form_message">Message </label>
+                            <textarea id="form_message" name="message" class="form-control "  rows="4"  data-error="Please,leave us a message."></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-success btn-send" name="btn-send"value="Send message">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-muted"><strong>*</strong> Ces champs sont obligatoires</p>
+                    </div>
                 </div>
             </div>
+          </div>
         </div>
-
     </div>
-   
+ </form>
 
-</section>
+
+
+    <!-- On créé nos propres fonctionnements en javascript ici : -->
+    <script>
+        // 1) Pour gérer la soumission d'un formulaire on utilise l'événement submit du formulaire
+        // 2) Le formulaire se soumet si la fonction appelée retourne "vrai" (true), si la fonction retourn "faux" (false), le formulaire refuse de se soumettre !
+        $('#contact-form').submit(function(){
+            console.log('submit du frm');
+            // Je veux interroger chaque input qui est obligatoire (qui a la classe css obligatoire)
+            var inputs = $('input.obligatoire');
+            var erreurs = 0;
+
+            // Pour chaque input qui est obligatoire, je veux faire la même chose :
+            inputs.each(function(index, input){
+                // 1) Je dois savoir qui est l'input pour en déduire ensuite qui est son message d'erreur
+                var id = input.id;
+                // 2) Je dois déduire l'id du message d'erreur grâce à l'id de l'input
+                // EXEMPLE : si l'identifiant de l'input est "nom" alors je sais que l'id du message est "nom-erreur" et je sais que pour le sélectionner avec jQuery je dois faire $('#nom-erreur')
+                var idMessage = '#' + id + '-erreur'; // #prenom-erreur
+                console.log('idMessage = ' + idMessage);
+                // 3) Je dois récupérer ce que l'utilisateur a mis dans l'input grâce au super pouvoir .val() de jQuery (je dois donc donner à input l'armure jQuery !)
+                var contenu = $(input).val();
+
+                // 4) Si le contenu est vide, il y a erreur
+                if(contenu.length === 0){
+                    // On augmente les erreurs
+                    erreurs++;
+                    // On affiche le message d'erreur
+                    $(idMessage).removeClass('hidden'); 
+                    // On ajoute la classe "invalid" à l'input
+                    $(input).addClass('invalid');
+                    // On enlève la classe "valid" à l'input
+                    $(input).removeClass('valid');
+                } else {
+                    // Sinon on cache le message d'erreur
+                    $(idMessage).addClass('hidden');
+                    // On ajoute à l'input la classe valid et on enlève la classe invalid
+                    $(input).addClass('valid').removeClass('invalid');
+                }
+            });
+
+            // Si il y a des erreurs, on ne soumet pas le formulaire
+            if(erreurs > 0){
+                return false;
+            }
+
+            // A la fin, si tout s'est bien passé, on soumet le formulaire  
+            return true;
+        })
+    </script>
+ </section>
+
+ 

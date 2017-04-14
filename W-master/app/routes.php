@@ -23,4 +23,18 @@
 		['GET|POST', '/adresses_utiles', 'Default#adresses', 'default_adresses'],
 		['GET|POST', '/annuaire_adherents', 'Default#annuaire', 'default_annuaire'],
 		['GET|POST', '/forum', 'Default#forum', 'default_forum'],
+     //jai rajouté une route pour la page contact rachida
+		['GET|POST', '/nous_contacter', 'Contact#contact', 'default_contact'],
+
+		///////////// Ajouté par Hasan //////////// 
+		['GET|POST' , '/admin/repertoire-langue'  		      , 'AdminLng#repertoireLangue' 	    , 'admin_repertoire_langue']          ,   
+		['GET|POST' , '/admin/repertoire-langue-update/[:id]' , 'AdminLng#repertoireLangueUpdate'   , 'admin_repertoire_langue_update']   , 
+
+		['GET|POST' , '/admin/agenda' , 'AdminAgenda#agenda'   , 'admin_agenda'],
+
+		//  HVA ajouté le 13/04
+		['GET|POST', '/carte_interactive/carte-liste' , 'Carte#liste', 'carte_interactive_liste'],
+		['GET|POST', '/carte_interactive/carte-maj/[:id]', 'Carte#carteMaj', 'carte_maj'],
+
+			
 	);

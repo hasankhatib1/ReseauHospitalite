@@ -7,17 +7,39 @@
 
 body {
      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: url('../img/bcg.jpg') no-repeat center center fixed; 
-
+    // background: url('../img/bcg.jpg') no-repeat center center fixed; 
+    
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
  }
+ #body{
+   background-color:#3ABFBB; !important; 
+ }
 
 #header{
-  background-color : black;
-  height: 200px;
+  padding-top: 0px;
+  background-color : #E0F7FA;
+  position: relative;
+  clear: both;
+}
+header {
+  height: 250px;
+  background: url(../img/LogoReseauHospitalite.png) no-repeat center ; 
+  background-size: 1200px cover  ;
+  border:1px solid #E0F7FA;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* Modification HVA 13/04 */
+  /*z-index: 9999;*/
+}
+.container,
+.box, 
+.row
+{
+  background-color: #E0F7FA;
 }
 
 h1,
@@ -26,19 +48,20 @@ h3,
 h4,
 h5,
 h6 {
-    text-transform: uppercase;
+    
     font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
 }
 .title-head{
-  text-transform: uppercase;
+  
     font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color:#EF6C00;
     letter-spacing: 1px;
-    margin: 0 auto;
-    padding-bottom: 30px; 
+    position: relative;
+    padding-top: 45px;
+   
 
 }
 p {
@@ -51,9 +74,13 @@ hr {
     max-width: 400px;
     border-color: #999999;
 }
-
-.logo img{
-  float:left;
+/* modifié par rachida 11:04*/
+.logo img{ 
+   max-width: 300px;
+  max-height: 300px;
+ margin-left: 150px;
+ margin-top: 40px;
+   
 }
 
 
@@ -69,12 +96,13 @@ hr {
    /* text-transform: uppercase; */
     font-weight: 1200;
     letter-spacing: 2px;
+
    
 
 }
 
 .navbar-nav {
-    text-transform: uppercase;
+    
     font-weight: 400;
     letter-spacing: 3px;
    
@@ -112,8 +140,8 @@ hr {
     margin-bottom: 20px;
 
     padding: 30px 15px;
-    background: #fff;
-    background: rgba(255,255,255,0.9);
+    background: #E0F7FA;
+    // background: rgba(255,255,255,0.9);
 }
 
 .intro-text {
@@ -134,9 +162,8 @@ hr {
     margin: 0 auto 0;
 }
 
-footer {    
-
-    background: black;
+footer {  
+    background: #E0F7FA;!important;
     padding-bottom: 0px; !important;
     
 }
@@ -144,18 +171,14 @@ footer {
   padding-top:120px;
   padding-bottom: 120px;
 }*/
-
-
-
-  .contact-footer div{
-    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif; !important;
-   
-    font-size: 1em; !important;
-    letter-spacing: 1px; !important;
-    color: white; !important;
-   /*padding-top:50px; !important;
-   padding-bottom:50px; !important;*/
-  
+/* Modification HVA 13/04 */
+.contact-footer {
+    padding-top:20px;
+    padding-bottom:20px;
+    // font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif; !important;
+    // font-size: 1.3em; !important;
+    // letter-spacing: 2px; !important;
+    // color: black; !important;
 }
 
 
@@ -170,7 +193,8 @@ footer {
         font-size: 5em;
         font-weight: 700;
         line-height: normal;
-        color: #FF9800; /*jai changé la couleur de la brand en body*/
+        color: #E0F7FA; /*jai changé la couleur de la brand en body*/
+
     }
 
     .top-divider {
@@ -182,34 +206,9 @@ footer {
         margin-right: 25px;
     }
 
-    .address-bar {
-        display: inherit;
-        margin: 0;
-       /* padding: 0 0 40px;*/
-       padding-bottom: 20px; 
-        text-align: center;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        text-transform: uppercase;
-        font-size: 1.25em;
-        font-weight: 400;
-        letter-spacing: 3px;
-        color: #388E3C; /*jai changé la couleur de l'adresse  en body*/
+    .nav{
+      background:#E0F7FA;
     }
-
-    .tel-bar{
-      display: inherit;
-     /* margin-right:120px;
-      margin-left: 240px;*/
-      margin: 0 auto;
-
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        text-transform: uppercase;
-        font-size: 1.25em;
-        font-weight: 400;
-        letter-spacing: 3px;
-        color: #388E3C;
-    }
-
 
     .navbar {
         border-radius: 1px;
@@ -217,6 +216,7 @@ footer {
 
     .navbar-header {
         display: none;
+
     }
 
     .navbar {
@@ -225,16 +225,22 @@ footer {
 
     .navbar-default {
         border: none;
-        background:#EEEEEE;
-        background: rgba(255,255,255,0.9);
+        background:#E0F7FA !important; 
+        // background: rgba(255,255,255,0.9);
+
     }
 
     .nav>li>a {
         padding: 35px;
+        color: #3ABFBB !important;
     }
+
 
     .navbar-nav>li>a {
         line-height: normal;
+    }
+    .dropdown-menu{
+     color: red !important;
     }
 
     .navbar-nav {
@@ -243,7 +249,9 @@ footer {
         margin: 0 auto;
         table-layout: fixed;
         font-size: 1.25em;
+        color: #E0F7FA !important;
     }
+
 }
 
 @media screen and (min-width:1200px) {
@@ -254,6 +262,26 @@ footer {
     }
 }
 
+/* jai modifié ca 11/04/
+/*******************
+blog responsive
+*********************/
+@media (min-width: 640px) and (max-width: 767px) {
+
+
+  #blog-left .blog-img .col-md-6 img{
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+  .block{
+    float : none;
+  }
+
+
+
+
 /* =====================
    Blog Post
    ===================== */
@@ -261,7 +289,7 @@ footer {
 
 #blog {
   padding:100px 0;
-  background: #f1f1f1;
+  background: #E0F7FA;
   display: flex;
 }
 #blog .img-blog
@@ -270,7 +298,7 @@ footer {
 }
 
 #blog-post .block {
-  background: #fff;
+  background: #E0F7FA;
   margin:0 5px;
 
 }
@@ -304,7 +332,7 @@ footer {
     transition: .3s all;
 }
 #blog-post .content small {
-  color: #999;
+  color: #E0F7FA;
 }
 #blog-post .content p {
   margin-top: 10px;
@@ -1215,4 +1243,45 @@ Evenement.php
 
 .description{
   text-align: justify;
+}
+
+
+/************
+entete header
+*************/
+header .entete{
+  padding-top: 0px;
+}
+
+header .entete ul {
+  list-style-type: none;
+}
+
+/* Modifications HVA 13/04 */
+header .entete ul li {
+  float: right;
+  display: block;
+  padding: 20px 10px;
+
+}
+/* header .entete ul li a{
+  text-decoration: none;
+}
+header .entete ul a:hover {
+  background-color:black;
+}
+*/
+
+
+/************************
+section-carte.php HVA
+***************************/
+#map {
+  width: 100%;
+  height: 550px;
+  margin-bottom: 15px;
+}
+.info-body {
+  text-align: center;
+  overflow: hidden;
 }

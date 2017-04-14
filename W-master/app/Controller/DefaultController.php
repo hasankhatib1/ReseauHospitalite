@@ -78,6 +78,6 @@ class DefaultController extends Controller
 	public function forum() {
 		$this->show('pages/forum');
 	}
-
+	
 
 }

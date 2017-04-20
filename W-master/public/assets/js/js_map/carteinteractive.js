@@ -93,7 +93,7 @@ objMap.showMarkers = function() {
   window.setTimeout(objMap.time, 0);
 };
 
-objMap.markerClickFunction = function(leContact, latlng) {
+objMap.markerClickFunction = function(pointCarte, latlng) {
   return function(e) {
     e.cancelBubble = true;
     e.returnValue = false;
@@ -102,22 +102,26 @@ objMap.markerClickFunction = function(leContact, latlng) {
       e.preventDefault();
     }
 
-    var detail ='';
-    if (leContact.url.trim() == "") {
-      detail = leContact.adresse;
+    var titre ='';
+    if (pointCarte.url.trim() == "") {
+      titre = pointCarte.nom;
     }
     else
-      detail = '<a href="' + leContact.url + '" target="_blank">' + leContact.adresse + '</a>';
+      titre = '<a href="' + pointCarte.url + '" target="_blank">' + pointCarte.nom + '</a>';
 
     var infoHtml = '<div class="info">' +
-                      '<h3>' + leContact.nom + '</h3>' +
+                      '<h4>' + titre + '</h4>' +
+                      '<div>' +
+                        pointCarte.description +
+                      '</div>' +
                       '<div class="info-body">' +
-                        detail +
+                        pointCarte.adresse +
                       '</div>' +
                     '</div>';
 
     objMap.infoWindow.setContent(infoHtml);
     objMap.infoWindow.setPosition(latlng);
+    objMap.infoWindow.setOptions({maxWidth:200});
     objMap.infoWindow.open(objMap.map);
   };
 };

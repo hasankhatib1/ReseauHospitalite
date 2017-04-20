@@ -1,0 +1,125 @@
+
+
+/************************
+actualites.php
+***************************/
+
+.flx{
+  height: 100%;
+}
+.imgArticle
+{
+  height: 200px;
+}
+
+.imgArticle img{
+  max-width: 200px;
+  max-height: 200px;
+  text-align: center;
+}
+
+
+
+/**********************
+css actualites
+**********************/
+
+ div.actualite {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin: 10px;
+}
+    
+.carousel-control span {
+  font-size: 3em !important;
+}
+.carousel-caption {
+    right: 0;
+    left: 0;
+    padding-bottom: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+.carousel-caption>h3>a{
+  color:white;
+}
+.carousel-caption>p{
+  color:white;
+}
+
+ .img-blog
+{
+  width: 100%;
+  height: 290px;
+  margin: 0 auto;
+}
+
+.carousel-indicators{
+  top:20px;
+  height: 30px;
+}
+
+.description{
+  text-align: justify;
+  height: 200px;
+  overflow: hidden;
+
+}
+
+.owl-wrapper {
+  display:flex !important;
+  align-items:stretch;
+  min-height:700px;
+}
+
+
+h1.blink {
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blink 
+{
+  50% {
+    color: #3ABFBB;
+  }
+}
+
+
+.bienvenue1 {
+  font-family: 'Tangerine', cursive;
+  font-size: 4em;
+
+}
+
+.bienvenue2 {
+  font-family: 'Graduate', cursive;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #2C7195 ;
+}
+
+.bienvenue3 {
+  font-family: 'Tangerine', cursive;
+  font-size: 4em;
+  font-weight: bold;
+}
+
+
+.titrsPage{
+    font-family: 'Graduate', cursive;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #2C7195 ;
+}
+
+
+.img-page{
+height: 50%;
+width:50%;
+}

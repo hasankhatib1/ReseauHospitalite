@@ -1,8 +1,10 @@
 
 <!--modifié par rachida 11-04 -->
 
-<nav class="navbar navbar-default " role="navigation">
-    <div class="container col-md-12 col-md-offset-3 ">
+<nav class="navbar navbar-default " role="navigation" >
+<!-- Modification HVA 13/04 -->
+    <!-- <div class="container col-md-12 col-md-offset-3 "> -->
+    <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -17,8 +19,8 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
 
+            <ul class="nav navbar-nav">
                 <li><a href="<?= $this->url('default_accueil')?>">Accueil</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nous connaître <span class="caret"></span></a>
@@ -48,7 +50,9 @@
                     <ul class="dropdown-menu">
                         <li><a href="<?= $this->url('default_ideesrecues')?>">Combattre les idées reçues</a></li>
                         <li><a href="<?= $this->url('default_actualites')?>">Actualités</a></li>
-                        <li><a href="<?= $this->url('default_agenda')?>">Agenda</a></li>
+                        
+                        <li><a href="<?= $this->url('agenda_public')?>">Agenda</a></li>
+                        
                         <li><a href="<?= $this->url('default_outils')?>">Outils pédagogiques/bonnes pratiques</a></li>
                         <li><a href="<?= $this->url('default_faq')?>">FAQ</a></li>
                     </ul>
@@ -62,17 +66,29 @@
                         <li><a href="<?= $this->url('default_adresses')?>">Adresses utiles</a></li>
                     </ul>
                 </li>
+                
+                <?php 
+                    if (isset($w_user['role'])) 
+                    { 
+                ?>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extranet<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                            <li><a href="<?= $this->url('admin_users_signup')?>">Création des comptes</a></li>
+                            <li><a href="<?= $this->url('admin_repertoire_langue')?>">Répertoire langue</a></li>
+                            <li><a href="<?= $this->url('admin_agenda')?>">Agenda partagé</a></li>   
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Outils <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="<?= $this->url('default_annuaire')?>">Annuaire adhérents</a></li>
-                        <li><a href="<?= $this->url('default_forum')?>">Forum</a></li>
-                    </ul>
-                </li>
-
+                                <li><a href="<?= $this->url('default_annuaire')?>">Annuaire adhérents</a></li>
+                                <li><a href="<?= $this->url('default_forum')?>">Forum</a></li>
+                            </ul>
+                        </li>
+                <?php 
+                   }
+                ?>
+                    
             </ul>
         </div>
 
     </div>
 </nav>
+

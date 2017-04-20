@@ -1,0 +1,89 @@
+
+/*  style de la page : Agenda-Public et Agenda-evenement */
+
+/* ************* Bottstap (Grid & panel) **************** */
+
+
+
+.flx {
+	height: 100% !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+
+
+.flex, .flex > div[class='col-'] {  
+    display: -webkit-box ;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex:1 1 auto;
+	  margin-top:2%; 
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width:320px) and (max-width:1000px){
+.flex, .flex > div[class='col-'] 
+  {
+    display:block;
+  }
+}
+
+.panel {
+   background-color:  #cceeee;
+   height: 96% !important;
+   width: 100%;
+}
+
+
+.imag {
+  margin: 0px auto;
+ float: right;
+ width: 30% ;
+ box-sizing: border-box ;
+ display: block  ;
+}
+
+.titre {
+  width: 60% ;
+  box-sizing: border-box ;
+  display: block ;
+  float: left;
+  
+}
+
+.resume {
+  width: 100% ;
+  box-sizing: border-box ;
+  display: inline-block ;
+  
+  
+}
+
+.btn-read {
+  background: #10436e;
+  color: #fff;
+  padding:5px 10px;
+  font-size: 13px;
+  margin-top: 10px;
+  border-radius: 25px;
+}
+
+a:hover .btn-read {
+  color : #fff ;
+}
+
+.titreEvent {
+   text-transform: uppercase;
+   color: #047747 ;
+}
+
+.chapoEvent {
+  font-size: 1.2em;
+  font-family: Arial !important;
+  color: #000 ;
+}

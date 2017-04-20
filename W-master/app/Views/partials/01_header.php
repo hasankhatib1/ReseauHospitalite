@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
@@ -12,6 +12,8 @@
     <title>Réseau Hospitalité</title>
 
 
+    <link href="https://fonts.googleapis.com/css?family=Graduate" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?= $this->assetUrl('css/main.css')?>">
 
@@ -25,24 +27,12 @@
     <link rel="stylesheet" href="<?= $this->assetUrl('css/bootstrap.min.css')?>">
     <link rel="stylesheet" href="<?= $this->assetUrl('css/preloader.css')?>">
 
-    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!! ATTENTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!! ATTENTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-    <!-- Au 10/04 ce fichier css ne sert à rien tant qu'on n'a aucune balise
-         avec la class scrollUp -->
-    <!-- <link rel="stylesheet" href="<?= $this->assetUrl('css/image.css')?>"> -->
-    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!! ATTENTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!! ATTENTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-
 
     <link rel="stylesheet" href="<?= $this->assetUrl('css/icon.css')?>">
 <!--     <link rel="stylesheet" href="<?= $this->assetUrl('css/style.css')?>"> -->
     <link rel="stylesheet" href="<?= $this->assetUrl('css/responsive.css')?>">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="<?= $this->assetUrl('css/main2.css')?>">
+  
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -56,6 +46,11 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="<?= $this->assetUrl('js/bootstrap.min.js')?>"></script>
 
+
+
+
+<!-- ////////// 1- ajouté par Hasan ////////////// -->
+
     <?php 
         if(isset($insertHtml))
             echo ($insertHtml) ;
@@ -65,18 +60,35 @@
 
 
 <body id="body">
-    <!-- <div class="container"> -->
-    <header id="header">
+   
+
+ <!-- ////////// 2- modifié par Hasan ////////////// -->
+
+    <header  id="header">
         <div class="entete">
-             <ul>
-                <li><a href="<?= $this->url('default_contact')?>">Nous contacter</a></li>
-                <li> <input type="text" placeholder="Rechercher"> <a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
-               <li> <a href="#" id="identification" data-toggle="modal" data-target="#myModal">S'identifier</a></li>
-            </ul>
-        
+            <?php if (isset($w_user['role'])) { ?>
+                <li> <a href="<?php echo $this->url('admin_users_logout') ?>" class ="identifBar"> Se déconnecter </a> 
+            <?php 
+                } 
+                else { 
+            ?>
+                <li> <a href="#" class ="identifBar" data-toggle="modal" data-target="#myModal">S'identifier</a></li>
+            <?php } ?>
+
+            <li><a href="<?= $this->url('default_contact')?>" class="identifBar">Nous contacter</a></li>
+            <li> <input type="text" placeholder="Rechercher"> <a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
+            <?php 
+                if (isset($w_user['role'])) 
+                { 
+                   echo "<li class=' text-center' id='idBienvenu'> Bienvenue <strong>". $w_user['username']."</strong> </li>" ;
+                    
+                }
+            ?>
         </div>
 
-        <!-- code pour modal bootstrap-->
+
+<!-- ////////// 3- modifié par Hasan ////////////// -->
+
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -88,7 +100,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="usernameEmail">Identiant ou adresse mail</label>
-                                <input type="email" name="usernameEmail"  class="form-control"/>
+                                <input type="text" name="usernameEmail"  class="form-control"/>
                             </div>
                             <div class="form-group">
                                 <label for="password">Mot de passe</label>
@@ -99,8 +111,10 @@
                             </p>
                         </div>
                         <div class="modal-footer">
+                        <div class="text-center">
                             <button type="submit" class="btn btn-success" >Valider</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                        </div>
                             <input type="hidden" name="operation" value="login">  <!-- info pour préciser l'action que l'admin veut réaliser -->
                         </div>
                     </form>
@@ -108,6 +122,7 @@
             </div>
         </div>
 
+        
 </header>
 
         <?php

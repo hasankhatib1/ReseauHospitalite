@@ -1,5 +1,5 @@
 <section>
-	<h1>Connexion</h1>
+	<h1 class="titrsPage">Connexion</h1>
 	<form method="POST" action="">
 		<input type="text" name="usernameOrEmail" placeholder="Nom ou email d'utilisateur" required><br>
 		<input type="password" name="password" placeholder="Mot de passe" required><br>

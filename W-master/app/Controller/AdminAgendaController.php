@@ -5,10 +5,10 @@
 
 
 
-namespace Controller ;  // c'est le nom du dossier dans lequel la classe est crée
+namespace Controller ;  
 
-use \W\Controller\Controller ;       // c'est le chemain de la classe parente Controller
-use \Model\AgendaModel;       // c'est le chemain de la classe AgendaModel (pour se connecter à la base de données)
+use \W\Controller\Controller ;       
+use \Model\AgendaModel;       // c'est le chemain pour le modele AgendaModel (pour se connecter à la base de données)
 
 class AdminAgendaController extends Controller
 {

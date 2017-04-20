@@ -27,14 +27,14 @@ class AdminUsersController extends Controller
 			$safe = array_map('strip_tags', $_REQUEST) ;
 			
 			$username     = trim($safe["username"]) ;   // utiliser (trim) pour suprimer les blanc avant et après le text
-			$email     = trim($safe["email"]) ;
-			$password   = trim($safe["password"]) ;
-			$role     = trim($safe["role"]) ;
+			$email     	= trim($safe["email"]) ;
+			$password  	= trim($safe["password"]) ;
+			$role      	= trim($safe["role"]) ;
 
-			if ( (is_string($username)) && (mb_strlen($username) > 3 )
-                    && (filter_var($email, FILTER_VALIDATE_EMAIL))   
-                    && ( mb_strlen($password) > 5 ) 
-                    && (($role == "admin")||($role == "redacteur")|| ($role == "utilisateur")) )
+			if ( is_string($username) && (mb_strlen($username) > 3 )
+                 && (filter_var($email, FILTER_VALIDATE_EMAIL))   
+                 && ( mb_strlen($password) > 5 ) 
+                 && (($role == "admin")||($role == "redacteur")|| ($role == "utilisateur")) )
 				{
 					$passwordHash = password_hash($password, PASSWORD_DEFAULT) ;  // hacher le mot de passe
 
@@ -50,17 +50,17 @@ class AdminUsersController extends Controller
 		                    "password"     => $passwordHash,
 		                    "role"         => $role  ]);
 
-		                    $message = "Utilisateur ajouté" ;
+		                    $message = "Compte ajouté" ;
 	                    }
 	                    else
 	                    {
-	                        $message = "ERREUR: username existe dejà";    
+	                        $message = "ERREUR: Identifiant existe dejà";    
 	                    }
 	                    
 	                }
 	                else
 	                {
-	                    $message = "ERREUR: email existe dejà";    
+	                    $message = "ERREUR: Email existe dejà";    
 	                }
 				}
 				else
@@ -69,17 +69,35 @@ class AdminUsersController extends Controller
 				}
 		}
 
+
+
+		// /* **************************  supprimer un compte*************************** */
+
+		if (isset($_REQUEST["operation"]) && ($_REQUEST["operation"] == "supprimer"))
+		{
+			$safe = array_map('strip_tags', $_REQUEST) ;
+			$id     = intval(trim($safe["id"])) ; // intval transforme le text en nombre
+			if ($id > 0)
+			{
+				$ObjetSignupDelet = new UsersModel;  
+
+				$ObjetSignupDelet->delete($id) ; // effacer la ligne 
+				$this->redirectToRoute('admin_users_signup');
+			}
+		}
+
+
 		$this->show('pages/admin-users-signup', ['message' => $message]); 
 
 	}
 
 
 
-	/* ********************************* modifier ou supprimer un compte  ******************************* */
+	/* ********************************* modifier un compte  ******************************* */
 
 
 
-	public function SignupUpdate($id)   // création de la méthode articleUpdate qui est associée à la route /admin/articleUpdate avec un paramètre dynamique ($id)
+	public function signupUpdate($id)   
 	{
 		 $this->allowTo(["admin", "redecteur", "utilisateur"]); // Protéger l'accès à cette page (la connexion à cette page et autériser seulement les utilisateurs qui ont le rôle : "admin", "super-admin, .... ")
 
@@ -89,43 +107,44 @@ class AdminUsersController extends Controller
 		{
 			$safe = array_map('strip_tags', $_REQUEST) ;
 
-			$username  = trim($safe["username"]) ;   
-			$email       = trim($safe["email"]) ;
-			$password         = trim($safe["password"]) ;
-			$role		     = trim($safe["role"]) ;
+			$username  	= trim($safe["username"]) ;   
+			$email     	= trim($safe["email"]) ;
+			$password  	= trim($safe["password"]) ;
+			$role	   	= trim($safe["role"]) ;
 
-			if(	(is_string($username)) && (mb_strlen($username) > 3 )
-                    && (filter_var($email, FILTER_VALIDATE_EMAIL))   
-                    && ( mb_strlen($password) > 5 ) 
-                    && (($role == "admin")||($role == "redacteur")|| ($role == "utilisateur"))  )
+			if(	is_string($username) && (mb_strlen($username) > 3 )
+                && (filter_var($email, FILTER_VALIDATE_EMAIL))   
+                && ( mb_strlen($password) > 5 ) 
+                && (($role == "admin")||($role == "redacteur")|| ($role == "utilisateur")) )
 			{
 
 				$passwordHash = password_hash($password, PASSWORD_DEFAULT) ;  // hacher le mot de passe
 
-				$objetUserModel = new UsersModel;  // création d'un objet sur la classe Model 
+				$ObjetSignupUpdate = new UsersModel;  
 
-				if (! $objetUserModel->emailExists($email))  // vérifier si le mail n'existe pas 
-                {
-                    if (! $objetUserModel->usernameExists($username)) // vérifier si le username existe déjà 
-                    {
-						$ObjetRepertoireLng->update([
+				// if (! $ObjetSignupUpdate->emailExists($email))  // vérifier si le mail existe déjà 
+    //             {
+                    // if (! $ObjetSignupUpdate->usernameExists($username)) // vérifier si le username existe déjà 
+                    // {
+						$ObjetSignupUpdate->update([
 		                "username"  => $username, 
 		                "email"     => $email, 
-		                "password"  => $password, 
+		                "password"  => $passwordHash, 
 		                "role"      => $role ] , $id);
 
-                		$message = "Utilisateur ajouté" ;
-                    }
-                    else
-                    {
-                        $message = "ERREUR: username existe dejà";    
-                    }
+                		$message = "Compte modifié" ;
+                    // }
+                    // else
+                    // {
+                    //     $message = "ERREUR: Identifiant existe dejà";    
+                    // }
                     
-                }
-                else
-                {
-                    $message = "ERREUR: email existe dejà";    
-                }
+                // }
+                // else
+                // {
+                //     $message = "ERREUR: Email existe dejà";    
+                // }
+                $this->redirectToRoute('admin_users_signup');
 			}
 			else
 			{
@@ -133,7 +152,7 @@ class AdminUsersController extends Controller
 			}
 		}
 
-		$this->show('pages/admin/users/signup-update', ["id" => $id , "message" => $message]); // afficher la page (admin-repertoire-langue-update.php) dans le dossier (pages) qui doit se trouver dans le dossier Views
+		$this->show('pages/admin-users-signup-update', ["id" => $id ,"message" => $message]); 
 	}	
 
 
@@ -173,7 +192,7 @@ class AdminUsersController extends Controller
 			}
 		}
 
-		$this->show('pages/admin-repertoire-langue'); 
+		$this->show('pages/accueil'); 
 	}
 
 
@@ -196,4 +215,6 @@ public function logout()   // création de la méthode logout qui est associée 
 
 
 }
+
+?>
 	

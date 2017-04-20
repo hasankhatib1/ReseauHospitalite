@@ -1,3 +1,4 @@
+
 <section>
 
     <div class="container">
@@ -6,12 +7,12 @@
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">Exemple contenu avec <strong>sujet</strong></h2>
+                    <h2 class="intro-text text-center"> <strong>HÉBERGEMENT</strong></h2>
                     <hr>
-                    <img class="img-responsive img-border img-left" src="<?= $this->assetUrl('img/photo1.jpg')?>" alt="">
+                    <img class="img-responsive img-border img-page img-left" src="<?= $this->assetUrl('img/humanite1.jpg')?>" alt="">
                     <hr class="visible-xs">
-                    <p>The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                    <p>le réseau hospitalite travaille en faveur de l’égalité des droits économiques, sociaux et culturels des étrangers. Elle coordonne et met en œuvre des actions d’accompagnement des personnes concourant au vivre ensemble. Ces activités, menées dans plusieurs régions, comprennent des actions socialisantes et notamment l’apprentissage du français. Elles sont également au cœur du travail quotidien exercé dans le centre d’accueil pour demandeurs d’asile (CADA) de Béziers et au centre provisoire d’hébergement (CPH) pour réfugiés de Massy.</p>
+                    <p>le réseau hospitalite héberge des demandeurs d’asile au sein de son centre d’accueil pour demandeurs d’asile (CADA) de Béziers et des réfugiés au centre provisoire d’hébergement (CPH) de Massy. Les personnes accueillies sont accompagnées par les équipes dans leurs démarches et dans leur projet d’insertion.</p>
                      <!-- il faut faire la meme chose que articles.php -->
                 </div>
             </div>
@@ -21,14 +22,15 @@
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">Exemple <strong>autre sujet</strong></h2>
+                    <h2 class="intro-text text-center"><strong>Notre historique</strong></h2>
                     <hr>
-                    <p>Use as many boxes as you like, and put anything you want in them! They are great for just about anything, the sky's the limit!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+                    <p>Depuis le début des années 60, le Centre international réseau hospitalite  a accueilli plus de 5000 personnes, hommes et femmes, étudiants et réfugiés, venant de plus de 100 pays. Aujourd’hui, plus de 80 réfugiés statutaires, de 30 nationalités différentes, vivent sur ce site et 40 autres en appartements éclatés sur le département de l’Essonne. Les personnes accueillies mettent en place avec l’équipe du centre leur projet d’insertion dans leur nouvelle société d’accueil.
+                    ce du statut de réfugié, en offrant aux demandeurs d’asile des normes minimales d’accueil leur garantissant un niveau de vie digne.</p>
                 </div >
             </div>
         </div>
 
-	</div>
+    </div>
 
 </section>

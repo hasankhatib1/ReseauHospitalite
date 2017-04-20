@@ -8,7 +8,7 @@
 namespace Controller ;  // c'est le nom du dossier dans lequel la classe est crée
 
 use \W\Controller\Controller ;       // c'est le chemain de la classe parente Controller
-use \Model\RepertoirelngModel;       // c'est le chemain de la classe RepertoireLngModel (pour se connecter à la base de données)
+use \Model\RepertoirelngModel;       // c'est le chemain pour le modèle RepertoireLngModel (pour se connecter à la base de données)
 
 class AdminLngController extends Controller
 {
@@ -93,6 +93,7 @@ class AdminLngController extends Controller
 				$ObjetRepertoireLng = new RepertoirelngModel;  // création d'un objet sur la classe RepertoireLngModel 
 
 				$ObjetRepertoireLng->delete($id) ; // effacer la ligne 
+				$this->redirectToRoute('admin_repertoire_langue');
 			}
 		}
 
@@ -103,9 +104,9 @@ class AdminLngController extends Controller
 
 /* ************************** modifier une structure de langue *************************** */
 
-	public function repertoireLangueUpdate($id)   // création de la méthode articleUpdate qui est associée à la route /admin/articleUpdate avec un paramètre dynamique ($id)
+	public function repertoireLangueUpdate($id)   
 	{
-		$this->allowTo(["admin", "redecteur", "utilisateur"]); // Protéger l'accès à cette page (la connexion à cette page et autériser seulement les utilisateurs qui ont le rôle : "admin", "super-admin, .... ")
+		$this->allowTo(["admin", "redecteur", "utilisateur"]); // Protéger l'accès à cette page (la connexion à cette page et autériser seulement aux utilisateurs qui ont le rôle : "admin", "super-admin, .... ")
 
 		$message = "" ;
 
@@ -127,18 +128,18 @@ class AdminLngController extends Controller
 			$infoComp        = trim($safe["infoComp"]) ;
 
 			if(	is_string($arrondissement) 	
-					&& is_string($structure)    && ( mb_strlen($structure) > 0 )
-                    && is_string($adresse)      && ( mb_strlen($adresse) > 0 ) 
-                    && is_string($tel    )      && ( mb_strlen($tel) > 0 ) 
-                    && is_string($mail)         && ( mb_strlen($mail) > 0 ) 
-                    && is_string($formation)    && ( mb_strlen($formation) > 0 ) 
-                    && is_string($cotisation)   && ( mb_strlen($cotisation) > 0 )  
-                    && is_string($placesDispo)  && ( mb_strlen($placesDispo) > 0 ) 
-                    && is_string($hAteliers)    && ( mb_strlen($hAteliers) > 0 )
-                    && is_string($hPermanence)  && ( mb_strlen($hPermanence) > 0 ) )
+				&& is_string($structure)    && ( mb_strlen($structure) > 0 )
+                && is_string($adresse)      && ( mb_strlen($adresse) > 0 ) 
+                && is_string($tel    )      && ( mb_strlen($tel) > 0 ) 
+                && is_string($mail)         && ( mb_strlen($mail) > 0 ) 
+                && is_string($formation)    && ( mb_strlen($formation) > 0 ) 
+                && is_string($cotisation)   && ( mb_strlen($cotisation) > 0 )  
+                && is_string($placesDispo)  && ( mb_strlen($placesDispo) > 0 ) 
+                && is_string($hAteliers)    && ( mb_strlen($hAteliers) > 0 )
+                && is_string($hPermanence)  && ( mb_strlen($hPermanence) > 0 ) )
 				{
 
-					$ObjetRepertoireLng = new RepertoirelngModel;  // création d'un objet sur la classe RepertoireLngModel 
+					$ObjetRepertoireLng = new RepertoirelngModel; 
 
 					$ObjetRepertoireLng->update([
                     "arrondissement"  => $arrondissement, 
@@ -156,7 +157,6 @@ class AdminLngController extends Controller
 
                     $message = "Structure modifiée " ;
                     $this->redirectToRoute('admin_repertoire_langue');
-
 				}
 				else
 				{

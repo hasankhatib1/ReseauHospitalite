@@ -1,5 +1,5 @@
 <section>
-	<div class="container">
+	<div class="container box">
 
 <?php
 	$continuer = false;
@@ -11,7 +11,7 @@
 				extract($pointcarte);
 				$message2 = "";
 				if (isset($message)) $message2 = $message;
-				echo '<h2>Mise à jour de "'.$nom.'"</h2>';
+				echo '<h2 class="text-center">Mise à jour de "'.$nom.'"</h2>';
 				$continuer = true;
 				$operation = 'modifier';
 			}
@@ -20,7 +20,7 @@
 			}
 		}
 		else {
-			echo '<h2>Nouveau point</h2>';
+			echo '<h2 class="text-center">Nouveau point</h2>';
 			$nom = '';
 			$description = '';
 			$adresse = '';

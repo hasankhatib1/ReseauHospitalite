@@ -2,8 +2,7 @@
 				<!-- ///////////// Ajouté par Hasan ///////////// -->
 
 
-
-<div id='calendar'></div>
+<div class="box" id='calendar'></div>
 
 <div class="container">  <!-- modal créer un événement -->
 	<form type="post" action="" id = "idFormCreat" >
@@ -13,7 +12,7 @@
 
 			        <div class="modal-header"> <!-- Modal Header-->
 			        	<button type="button" class="close" data-dismiss="modal">&times;</button>
-			        	<h4 class="modal-title">Créer votre événement :  <span id="eventDate"> </span></h4>
+			        	<h6 class="modal-title text-center titrsPage">Créer votre événement <span id="eventDate"> </span></h6>
 			        </div> <!-- Fin Modal Header-->
 
 			        <div class="modal-body"> <!-- Modal Body-->
@@ -59,7 +58,7 @@
 
 	        		<div class="modal-header"> <!-- Modal Header-->
 	          			<button type="button" class="close" data-dismiss="modal">&times;</button>
-	          			<h4 class="modal-title">Modifier votre événement</h4>
+	          			<h6 class="modal-title text-center titrsPage">Modifier votre événement : </h6>
 	        		</div> <!-- Fin Modal Header-->
 
 	        		<div class="modal-body"> <!-- Modal Body-->

@@ -7,6 +7,8 @@ use \W\Controller\Controller;
 class CarteController extends Controller
 {
 
+	private $message;
+
 	private $nom;
 	private $description;
 	private $categorie;
@@ -26,17 +28,21 @@ class CarteController extends Controller
 		$this->adresse = $contact['adresse'];
 		$this->codepostal = $contact['codepostal'];
 		$this->ville = $contact['ville'];
-		$this->geolocalisation();
 		$this->url = $contact['url'];
 		$this->afficher = $contact['afficher'];
+		if ($this->geolocalisation()) {
+			return true;
+		}
+		else {
+			$this->message = "Le système n'a pas pu localiser cette adresse, l'enregistrement a été annulé";
+			return false;
+		}
 
-		return true;
 	}
 
 	// le framworke w va extraire de l'url l'info qui correspond à [:id] (voir route.php)
 	// et va le passer en prm de la méthode
 	public function carteMaj ($id) {
-		$message = "";
 
 		if (!empty($_REQUEST)) {
 			$safe = array_map('strip_tags', $_REQUEST);
@@ -57,24 +63,32 @@ class CarteController extends Controller
 					switch ($safe['operation']) {
 						case 'modifier':
 							$objpointscarte->update($data, $id, true);
-							$message = "Le point a été enregistré";
+							$this->message = "Le point a été enregistré";
 							break;
 						case 'creer':
 							$objpointscarte->insert($data, true);
-							$message = "Le point a été ajouté";
+							$this->message = "Le point a été ajouté";
+							break;
+						case 'supprimer':
+							$objpointscarte->delete($data, true);
+							$this->message = "Le point a été supprimé";
 							break;
 					}
-				}
-				else {
-					$message = "Erreur de saisie, enregistrement annulé";
 				}
 			}
 			$this->redirectToRoute('carte_interactive_liste');
 		}
 		else {
 			$this->show('pages/carte-maj', ["id" => $id,
-											"message" => $message]);
+											"message" => $this->message]);
 		}
+	}
+
+	public function supprimer ($id) {
+		$objpointscarte = new \Model\CarteinteractiveModel;
+		$objpointscarte->delete($id);
+		$this->message = "Le point a été supprimé";
+		$this->redirectToRoute('carte_interactive_liste');
 	}
 
 	public function liste() {
@@ -97,7 +111,9 @@ class CarteController extends Controller
 			$json = $result->results[0];
 			$this->longitude = $json->geometry->location->lng;
 			$this->latitude = $json->geometry->location->lat;
+			return true;
 		}
+		else return false;
 	}
 
 

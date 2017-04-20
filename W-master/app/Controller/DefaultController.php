@@ -51,12 +51,19 @@ class DefaultController extends Controller
 	public function ideesrecues() {
 		$this->show('pages/ideesrecues');
 	}
-	public function actualites() {
-		$this->show('pages/actualites');
+	
+	public function actualites($page=0) {
+		$this->show('pages/actualites', [ "page" => $page]); // jai change 14/04 rachida
 	}
-	public function agenda() {
-		$this->show('pages/agenda');
+
+	public function actualite($id) {
+		$this->show('pages/actualite', ["id" => $id]); // jai change 19/04 rachida
 	}
+
+	// public function agenda() {
+	// 	$this->show('pages/agenda');
+	// }
+	
 	public function outils() {
 		$this->show('pages/outils');
 	}
@@ -79,5 +86,9 @@ class DefaultController extends Controller
 		$this->show('pages/forum');
 	}
 	
-
+	public function mentionsLegales() {
+		$this->show('pages/mentions-legales');
+	}
 }
+
+?>

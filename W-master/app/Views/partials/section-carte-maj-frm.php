@@ -68,10 +68,10 @@
 			<input type="hidden" name="id" value="$id">
 			<input type="hidden" name="operation" value="<?= $operation ?>">
 
-			<div class="form-group text-center">
+			<div class="text-center">
 				<div class="message"></div>
-				<button type="submit" class="btn btn-default">Enregistrer</button>
-				<button class="btn btn-default"><a href="<?= $this->url('carte_interactive_liste')?>">Fermer</a></button>
+				<button type="submit" class="btn btn-success">Enregistrer</button>
+				<a class="btn btn-success" href="<?= $this->url('carte_interactive_liste')?>">Fermer</a>
 			</div>
 		</form>
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 14 Avril 2017 à 09:43
+-- Généré le :  Jeu 20 Avril 2017 à 15:10
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  5.5.38
 
@@ -40,8 +40,10 @@ CREATE TABLE `agenda` (
 --
 
 INSERT INTO `agenda` (`id`, `title`, `description`, `start`, `end`) VALUES
-(6, 'dcesc ', ' cedzc ', '2017-04-14 03:00:00', '0000-00-00 00:00:00'),
-(7, ' cx', ' ccx ', '2017-04-14 02:00:00', '2017-04-14 04:05:00');
+(34, 'rdv 11/04', ' 1 er rdv', '2017-04-11 01:00:00', '2017-04-11 11:01:00'),
+(35, 'rdv 13/04', '2 er rdv', '2017-04-13 03:00:00', '2017-04-13 05:30:00'),
+(63, ' cs v', '  c', '2017-04-12 02:30:00', '2017-04-12 04:00:00'),
+(64, 'Soutenance projet WebForce3', ' Projet Réseau Hospitalité', '2017-04-21 09:00:00', '2017-04-21 14:00:00');
 
 --
 -- Index pour les tables exportées
@@ -61,7 +63,7 @@ ALTER TABLE `agenda`
 -- AUTO_INCREMENT pour la table `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

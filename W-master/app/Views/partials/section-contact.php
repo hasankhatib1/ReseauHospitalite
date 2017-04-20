@@ -6,7 +6,9 @@
             <div class="box">
                 <div class="col-lg-12 text-center">
         <!-- <form id="contact-form" method="post" action="section-contact.php" role="form"> -->
-        <form id="contact-form" method="post" role="form">
+<!--         HVA : VERIFIER pourquoi est-ce qu'on a cet id contact-form utilisé uniquement dans responsive.css
+        Autrement dit : c'est quoi ce responsive.css ?
+ -->        <form id="contact-form" method="post" role="form">
 
             <div class="messages"></div>
 
@@ -17,7 +19,7 @@
                         <div class="form-group">
                             <label for="form_name">Nom *</label>
                             <input id="form_name" type="text" name="name" class="form-control obligatoire"  data-error="Firstname is required.">
-                            <span class="error hidden" id="nom-erreur">Veuillez entrer votre nom de famile !</span>
+        
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
@@ -55,7 +57,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <input type="submit" class="btn btn-success btn-send" name="btn-send"value="Send message">
+                        <input type="submit" class="btn btn-success btn-send" name="btn-send" value="Envoyer">
                     </div>
                 </div>
                 <div class="row">

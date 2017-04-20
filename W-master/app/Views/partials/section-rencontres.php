@@ -1,3 +1,5 @@
 <section>
-	<h1>A compléter</h1>
+	<div class="container">
+		<h1 class="titrsPage"> Réseau Hospitalité ... </h1>
+	</div>
 </section>
